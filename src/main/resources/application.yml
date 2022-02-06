@@ -1,7 +1,7 @@
 spring:
   datasource:
 #    여러개 접근 시 좀 더 빠르게 처리 (권장사항)
-    url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE
+    url: jdbc:h2:tcp://localhost/~/jpashop
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -11,10 +11,11 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
-        show_sql: true
+#        show_sql: true
         fromat_sql: true
 #        이러한 설정정보 관련한 매뉴얼은 스프링부트 매뉴얼에서 찾아볼 수 있다.
 
 logging:
   level:
     org.hibernate.SQL: debug
+    org.hibernate.type: trace
